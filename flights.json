@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Flight #1",
+    "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EEST)",
+    "duration": "1 hour"
+  },
+  {
+      "title": "Flight #2",
+      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EEST)",
+      "duration": "8 hours"
+  },
+  {
+      "title": "Flight #3",
+      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EEST)",
+      "duration": "30 minutes"
+  }
+]

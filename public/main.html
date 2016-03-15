@@ -1,0 +1,118 @@
+<!doctype html>
+
+<html ng-app="SE_AIRLINES">
+<head>
+    <title>SE Airlines</title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/jquery-2.2.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="core.js"></script>
+    <script src="/services/flightsSrv.js"></script>
+    <script src="/controllers/mainCtrl.js"></script>
+</head>
+<body ng-controller="mainCtrl">
+
+<!-- TOP NAVBAR -->
+  <nav class='navbar navbar navbar-fixed-top'>
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">SE Airlines</a>
+      </div>
+    </div>
+  </nav>
+<!-- TOP NAVBAR -->
+
+<!-- MAIN ADVERTISMENT -->
+<div class="row">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class='center' style='font-size: 45px;'>
+            Welcome to SE Airlines!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="jumbotron">
+              <h3>Book Travel</h3>
+              <div class="dropdown">
+                <button type="button" class='btn btn-default dropdown-toggle' id='originDDL' data-toggle='dropdown' ng-click='toggled' ng-bind='selectedOriginCity' aria-haspopup='true' aria-expanded='true'>
+                  <span class='caret'></span>
+                </button>
+                <ul class='dropdown-menu' aria-labelledby='originDDL'>
+                  <li ng-repeat='city in cities'>
+                    <a href="#" ng-click='SetOriginCity(city)'>{{city}}</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="dropdown">
+                <button type="button" class='btn btn-default dropdown-toggle' id='destinationDDL' data-toggle='dropdown' ng-click='toggled' ng-bind='selectedDestinationCity' aria-haspopup='true' aria-expanded='true'>
+                  <span class='caret'></span>
+                </button>
+                <ul class='dropdown-menu' aria-labelledby='destinationDDL'>
+                  <li ng-repeat='city in cities'>
+                    <a href="#" ng-click='SetDestinationCity(city)'>{{city}}</a>
+                  </li>
+                </ul>
+              </div>
+
+            <button type="button" class="btn btn-primary" id='btnSearch' ng-click='SearchFlights()'>Search Flights</button>
+          </div>
+        </div>
+        <div class="col-sm-8">
+          <ul class=''>
+            <li ng-repeat='flight in flights'>
+              <a href="#">{{flight}}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MAIN ADVERTISMENT -->
+
+<!-- PROMOTIONAL OFFERS -->
+  <div class="row">
+   <div class="col-sm-6 col-md-4">
+     <div class="thumbnail">
+       <img src="..." alt="...">
+       <div class="caption">
+         <h3>Thumbnail label</h3>
+         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit</p>
+         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+       </div>
+     </div>
+   </div>
+
+   <div class="col-sm-6 col-md-4">
+     <div class="thumbnail">
+       <img src="..." alt="...">
+       <div class="caption">
+         <h3>Thumbnail label</h3>
+         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.Button</p>
+         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+       </div>
+     </div>
+   </div>
+
+   <div class="col-sm-6 col-md-4">
+     <div class="thumbnail">
+       <img src="..." alt="...">
+       <div class="caption">
+         <h3>Thumbnail label</h3>
+         <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.Button</p>
+         <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+       </div>
+     </div>
+   </div>
+ </div>
+<!-- PROMOTIONAL OFFERS -->
+
+</body>
+</html>

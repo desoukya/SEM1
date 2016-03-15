@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Airbus",
+    "max": "32",
+    "map": [
+      {"1A": "", "class": "business", "asile": false, "window": true},
+      {"1B": "", "class": "business", "asile": false, "window": true},
+      {"9A": "", "class": "economy", "asile": false, "window": true}
+    ]
+  },
+  {
+    "title": "Boeing",
+    "max": "10",
+    "map": [
+      {"1A": "", "class": "business", "asile": false, "window": true},
+      {"1B": "", "class": "business", "asile": false, "window": true},
+      {"9A": "", "class": "economy", "asile": false, "window": true}
+    ]
+  }
+]

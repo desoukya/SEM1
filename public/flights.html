@@ -1,0 +1,56 @@
+<!doctype html>
+
+<html ng-app="SE_AIRLINES">
+<head>
+    <title>SE Airlines</title>
+    <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/main.css">
+    <script src="/js/angular.min.js"></script>
+    <script src="/js/jquery-2.2.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="core.js"></script>
+    <script src="/services/flightsSrv.js"></script>
+    <script src="/controllers/flightsCtrl.js"></script>
+</head>
+<body ng-controller="flightsCtrl">
+
+<!-- TOP NAVBAR -->
+  <nav class='navbar navbar navbar-fixed-top'>
+    <div class="container">
+      <div class="navbar-header">
+        <a href="#" class="navbar-brand">SE Airlines</a>
+      </div>
+    </div>
+  </nav>
+<!-- TOP NAVBAR -->
+
+<!-- MAIN ADVERTISMENT -->
+<div class="row">
+  <div class="jumbotron">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-12">
+          <p class='center' style='font-size: 45px;'>
+            Welcome to SE Airlines!
+          </p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron">
+              <h3>Search Results</h3>
+              <ul class=''>
+                <li ng-repeat='flight in flights'>
+                  <a href="#">{{flight}}</a>
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- MAIN ADVERTISMENT -->
+
+</body>
+</html>

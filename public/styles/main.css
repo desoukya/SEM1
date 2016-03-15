@@ -1,0 +1,47 @@
+body {
+  padding-top: 50px;
+}
+
+.center {
+  text-align: center;
+}
+
+.jumbotron {
+ background-image: url("/images/ad.jpg");
+ height: 750px;
+}
+
+.container .jumbotron {
+ padding-top: 1px !important;
+ border-color: gray;
+ border-width:  inherit;
+ border-radius: 0;
+ border-style: solid;
+ background-image: none;
+ background-color: white;
+ height: 350px;
+}
+.container .jumbotron h3 {
+  font-size: 15px;
+  padding-top: 0px;
+  text-align: center;
+}
+.container .jumbotron .dropdown {
+ /*display: inline;*/
+ /*padding-right: 100px;
+ padding-left: 0px;*/
+ width: 160px;
+}
+
+.flightSearchResults {
+  background-image: none;
+  background-color: white;
+  height: 550px;
+}
+
+.container .jumbotron .dropdown button {
+ /*display: inline;*/
+ /*padding-right: 100px;
+ padding-left: 0px;*/
+ width: 260px;
+}
