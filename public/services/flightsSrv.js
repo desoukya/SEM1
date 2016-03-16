@@ -14,7 +14,7 @@ angular.module('SE_AIRLINES')
            this.destiantionCity = value;
          },
          getFlightData : function(origin, dest) {
-           return $http.get('/api/flights/' + origin + '/' + dest);
+           return $http.get('/api/flights/search/' + origin + '/' + dest);
          },
          getOriginCities : function() {
            return $http.get('/api/cities/origin');

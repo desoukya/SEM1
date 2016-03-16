@@ -19,7 +19,7 @@
                   </button>
                   <ul class='dropdown-menu' aria-labelledby='originDDL'>
                     <li ng-repeat='origin in originCities'>
-                      <a href="/#/" ng-click='SetOriginCity(origin.airport)'>{{origin.airport}}</a>
+                      <a href="/#/" ng-click='SetOriginCity(origin.code)'>{{origin.airport}}</a>
                     </li>
                   </ul>
                 </div>
@@ -30,7 +30,7 @@
                   </button>
                   <ul class='dropdown-menu' aria-labelledby='destinationDDL'>
                     <li ng-repeat='destination in destinationCities'>
-                      <a href="/#/" ng-click='SetDestinationCity(destination.airport)'>{{destination.airport}}</a>
+                      <a href="/#/" ng-click='SetDestinationCity(destination.code)'>{{destination.airport}}</a>
                     </li>
                   </ul>
                 </div>
