@@ -18,8 +18,8 @@
                     <span class='caret'></span>
                   </button>
                   <ul class='dropdown-menu' aria-labelledby='originDDL'>
-                    <li ng-repeat='city in cities'>
-                      <a href="/#/" ng-click='SetOriginCity(city)'>{{city}}</a>
+                    <li ng-repeat='origin in originCities'>
+                      <a href="/#/" ng-click='SetOriginCity(origin.airport)'>{{origin.airport}}</a>
                     </li>
                   </ul>
                 </div>
@@ -29,21 +29,14 @@
                     <span class='caret'></span>
                   </button>
                   <ul class='dropdown-menu' aria-labelledby='destinationDDL'>
-                    <li ng-repeat='city in cities'>
-                      <a href="/#/" ng-click='SetDestinationCity(city)'>{{city}}</a>
+                    <li ng-repeat='destination in destinationCities'>
+                      <a href="/#/" ng-click='SetDestinationCity(destination.airport)'>{{destination.airport}}</a>
                     </li>
                   </ul>
                 </div>
 
               <button type="button" class="btn btn-primary" id='btnSearch' ng-click='SearchFlights()'>Search Flights</button>
             </div>
-          </div>
-          <div class="col-sm-8">
-            <ul class=''>
-              <li ng-repeat='flight in flights'>
-                <a href="/#/">{{flight}}</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

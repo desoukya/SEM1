@@ -6,34 +6,48 @@ module.exports = function(app,mongo) {
     app.get('/api/db/delete', function(req, res) {
       console.log(`[delete endpoint] <<< ${mongo} >>>`);
       mongo.db().collection('aircrafts').drop();
-      mongo.db().collection('originCodes').drop();
-      mongo.db().collection('destCodes').drop();
+      mongo.db().collection('originCities').drop();
+      mongo.db().collection('destCities').drop();
     });
 
     app.get('/api/db/seed', function(req, res) {
       console.log(`[seed endpoint] <<< ${mongo} >>>`);
       var aircrafts   =  require('../aircrafts.json');
-      var originCodes =  require('../originCodes.json');
-      var destCodes   =  require('../destCodes.json');
+      var originCities =  require('../originCodes.json');
+      var destCities   =  require('../destCodes.json');
 
       mongo.db().collection('aircrafts').insertMany(aircrafts, function(err,res){
         if(err) throw error('aircrafts insertion error');
         else console.log('aircrafts insertion successfull');
       });
-      mongo.db().collection('originCodes').insertMany(originCodes, function(err,res){
-        if(err) throw error('originCodes insertion error');
+      mongo.db().collection('originCities').insertMany(originCities, function(err,res){
+        if(err) throw error('originCities insertion error');
         else console.log('codes insertion successfull');
       });
-      mongo.db().collection('destCodes').insertMany(destCodes, function(err,res){
-        if(err) throw error('destCodes insertion error');
-        else console.log('codes insertion successfull');
+      mongo.db().collection('destCities').insertMany(destCities, function(err,res){
+        if(err) throw error('destCities insertion error');
+        else console.log('destCities insertion successfull');
       });
 
     });
 
     app.get('/api/flights/:origin/:destination', function(req, res) {
+
+      // mongo.db().collection('destCities').find().toArray(function(err,res){
+      // });
+
       var flights =  require('../flights.json');
       res.json( flights );
+    });
+
+    app.get('/api/cities/origin', function(req, res) {
+      var codes =  require('../originCodes.json');
+      res.json( codes );
+    });
+
+    app.get('/api/cities/destination', function(req, res) {
+      var codes =  require('../destCodes.json');
+      res.json( codes );
     });
 
     // app.post('/api/blogs', function (req, res) {
