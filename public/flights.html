@@ -13,11 +13,16 @@
           <div class="col-sm-12">
             <div class="jumbotron">
                 <h3>Search Results</h3>
-                <ul class=''>
+                <!-- <ul class="list-group">
                   <li ng-repeat='flight in flights'>
                     <a href="#">{{flight}}</a>
                   </li>
-                </ul>
+                </ul> -->
+
+                <div class="list-group" ng-repeat='flight in flights'>
+                  <a href="#">{{flight.title}}</a>
+                </div>
+
             </div>
           </div>
         </div>

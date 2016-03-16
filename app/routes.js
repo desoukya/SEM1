@@ -5,23 +5,27 @@ module.exports = function(app,mongo) {
 
     app.get('/api/db/delete', function(req, res) {
       console.log(`[delete endpoint] <<< ${mongo} >>>`);
-      var aircrafts =  require('../aircrafts.json');
-      var codes     =  require('../aircrafts.json');
       mongo.db().collection('aircrafts').drop();
-      mongo.db().collection('airport_codes').drop();
+      mongo.db().collection('originCodes').drop();
+      mongo.db().collection('destCodes').drop();
     });
 
     app.get('/api/db/seed', function(req, res) {
       console.log(`[seed endpoint] <<< ${mongo} >>>`);
-      var aircrafts =  require('../aircrafts.json');
-      var codes     =  require('../aircrafts.json');
+      var aircrafts   =  require('../aircrafts.json');
+      var originCodes =  require('../originCodes.json');
+      var destCodes   =  require('../destCodes.json');
 
       mongo.db().collection('aircrafts').insertMany(aircrafts, function(err,res){
         if(err) throw error('aircrafts insertion error');
         else console.log('aircrafts insertion successfull');
       });
-      mongo.db().collection('airport_codes').insertMany(codes, function(err,res){
-        if(err) throw error('codes insertion error');
+      mongo.db().collection('originCodes').insertMany(originCodes, function(err,res){
+        if(err) throw error('originCodes insertion error');
+        else console.log('codes insertion successfull');
+      });
+      mongo.db().collection('destCodes').insertMany(destCodes, function(err,res){
+        if(err) throw error('destCodes insertion error');
         else console.log('codes insertion successfull');
       });
 

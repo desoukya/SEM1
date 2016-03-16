@@ -1,0 +1,17 @@
+[
+    {
+      "airport" : "Dulles International Airport",
+      "city": "Dulles",
+      "code": "IAD"
+    },
+    {
+      "airport" : "Chicago O'Haire International Airport",
+      "city": "Chicago",
+      "code": "ORD"
+    },
+    {
+      "airport" : "Dubai International Airport",
+      "city": "Dubai",
+      "code": "DXB"
+    }
+]

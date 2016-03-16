@@ -16,7 +16,6 @@ angular.module('SE_AIRLINES')
     };
 
     $scope.SearchFlights = function() {
-      alert("Hello from Angular - searching for flights from " + FlightsSrv.getSelectedOriginCity() + " to " + FlightsSrv.getSelectedDestinationCity());
       $location.url('/flights');
     };
 

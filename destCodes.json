@@ -1,0 +1,17 @@
+[
+    {
+      "airport" : "Atlanta Hartfield Airport",
+      "city": "Atlanta",
+      "code": "ATL"
+    },
+    {
+      "airport" : "John F. Kennedy International Airport",
+      "city": "New York",
+      "code": "JFK"
+    },
+    {
+      "airport" : "Charles De Gaulle Airport",
+      "city": "Paris",
+      "code": "CDG"
+    }
+]
