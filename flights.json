@@ -1,17 +1,26 @@
 [
   {
-    "title": "Flight #1",
-    "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EEST)",
-    "duration": "1 hour"
+      "title": "SE603",
+      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
+      "duration": "1 hour",
+      "origin": "IAD",
+      "destination": "JFK",
+      "cost": "$1403"
   },
   {
-      "title": "Flight #2",
-      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EEST)",
-      "duration": "8 hours"
+      "title": "SE05",
+      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
+      "duration": "8 hours",
+      "origin": "JFK",
+      "destination": "CAI",
+      "cost": "$2403"
   },
   {
-      "title": "Flight #3",
-      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EEST)",
-      "duration": "30 minutes"
+      "title": "SE9208",
+      "created": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
+      "duration": "30 minutes",
+      "origin": "CDG",
+      "destination": "ATL",
+      "cost": "$2803"
   }
 ]

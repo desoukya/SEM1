@@ -5,24 +5,28 @@
         <div class="row">
           <div class="col-sm-12">
             <p class='center' style='font-size: 45px;'>
-              Welcome to SE Airlines!
+              Search Results
             </p>
           </div>
         </div>
         <div class="row">
-          <div class="col-sm-12">
-            <div class="jumbotron">
-                <h3>Search Results</h3>
-                <!-- <ul class="list-group">
-                  <li ng-repeat='flight in flights'>
-                    <a href="#">{{flight}}</a>
-                  </li>
-                </ul> -->
-
-                <div class="list-group" ng-repeat='flight in flights'>
-                  <a href="#">{{flight.title}}</a>
+          <div class="col-sm-2"></div>
+          <div class="col-sm-8">
+            <div class="list-group" ng-repeat='flight in flights'>
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  {{flight.cost}}
+                  <button class="btn btn btn-warning pull-right">Select</button>
+                  <div class="clearfix"></div>
                 </div>
-
+                <div class="panel-body">
+                  {{flight.origin}} - {{flight.destination}}
+                  <br/>
+                  <span>flight duration: {{flight.duration}}</span>
+                  <span>{{flight.created}}</span>
+                </div>
+                <br/>
+              </div>
             </div>
           </div>
         </div>
