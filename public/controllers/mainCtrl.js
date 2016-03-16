@@ -1,6 +1,6 @@
 angular.module('SE_AIRLINES')
 
-.controller('mainCtrl', function($scope, $window, FlightsSrv) {
+.controller('mainCtrl', function($scope, $window, FlightsSrv, $location) {
     $scope.cities                   = ['Atlanta', 'Dubai', 'New York'];
     $scope.selectedOriginCity       = 'From';
     $scope.selectedDestinationCity  = 'To';
@@ -17,7 +17,8 @@ angular.module('SE_AIRLINES')
 
     $scope.SearchFlights = function() {
       alert("Hello from Angular - searching for flights from " + FlightsSrv.getSelectedOriginCity() + " to " + FlightsSrv.getSelectedDestinationCity());
-      $window.location.href = '/flights.html';
+      // $window.location.href = '/flights.html';
+      $location.url('/flights');
     };
 
 });

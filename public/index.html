@@ -1,44 +1,34 @@
 <!doctype html>
 
-<html ng-app="Milestone_1">
-<head>
-    <title>Node/Angular Blogs App</title>
+<html ng-app="SE_AIRLINES">
+  <head>
+    <title>SE Airlines</title>
     <link rel="stylesheet" href="/styles/bootstrap.min.css">
+    <link rel="stylesheet" href="/styles/main.css">
     <script src="/js/angular.min.js"></script>
+    <script src="/js/angular-route.min.js"></script>
     <script src="/js/jquery-2.2.0.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script src="core.js"></script>
+    <script src="/services/flightsSrv.js"></script>
+    <script src="/controllers/mainCtrl.js"></script>
+    <script src="/controllers/flightsCtrl.js"></script>
+  </head>
+    <body ng-controller='mainCtrl'>
 
-</head>
-<body ng-controller="blogCtrl">
-    <div class="container">
-
-        <div class="jumbotron text-center">
-            <h1>Blog Posts <span class="label label-info">{{ blogs.length }}</span></h1>
+    <!-- TOP NAVBAR -->
+    <nav class='navbar navbar-inverse navbar-fixed-top'>
+      <div class="container">
+        <div class="navbar-header">
+          <a href="/#/" class="navbar-brand">SE Airlines</a>
         </div>
+      </div>
+    </nav>
+    <!-- TOP NAVBAR -->
 
-        <div id="blog-list" class="row">
-            <div class="col-sm-4 col-sm-offset-4">
-                <div class="checkbox" ng-repeat="blog in blogs">
-                    <label>
-                        <input type="checkbox" ng-click=""> {{ blog.title }}
-                    </label>
-                </div>
+    <!-- ANGULAR DYNAMIC TEMPLATING -->
+    <div ng-view></div>
+    <!-- ANGULAR DYNAMIC TEMPLATING -->
 
-            </div>
-        </div>
-
-        <div id="blog-form" class="row">
-            <div class="col-sm-8 col-sm-offset-2 text-center">
-                <form>
-                    <div class="form-group">
-                        <input type="text" class="form-control input-lg text-center" placeholder="Angular Rocks!" ng-model="formData.title">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-lg" ng-click="createBlogPost()">Add</button>
-                </form>
-            </div>
-        </div>
-
-    </div>
-
-</body>
+    </body>
 </html>

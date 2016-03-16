@@ -55,7 +55,7 @@ module.exports = function(app,mongo) {
 
     app.get('*', function (req, res) {
       // load the view file (angular will handle the page changes on the front-end)
-      res.sendFile(__dirname + '/public/main.html');
+      res.sendFile(__dirname + '/public/index.html');
     });
 
 };
