@@ -6,13 +6,13 @@ var App = angular.module('SE_AIRLINES', ['ngRoute']);
 
           // route for the home page
           .when('/', {
-              templateUrl : 'main.html',
+              templateUrl : '/partials/main.html',
               controller  : 'mainCtrl'
           })
 
           // route for the contact page
           .when('/flights', {
-              templateUrl : 'flights.html',
+              templateUrl : '/partials/flights.html',
               controller  : 'flightsCtrl'
           });
   });
