@@ -3,13 +3,16 @@
  */
 module.exports = function(app,mongo) {
 
+    // SEED DB
     app.get('/api/db/delete', function(req, res) {
       console.log(`[delete endpoint] <<< ${mongo} >>>`);
       mongo.db().collection('aircrafts').drop();
       mongo.db().collection('originCities').drop();
       mongo.db().collection('destCities').drop();
+      mongo.db().collection('flights').drop();
     });
 
+    // DELETE DB
     app.get('/api/db/seed', function(req, res) {
       console.log(`[seed endpoint] <<< ${mongo} >>>`);
       var aircrafts     =  require('../aircrafts.json');
@@ -36,16 +39,18 @@ module.exports = function(app,mongo) {
 
     });
 
+    // SEARCH ENDPOINT
     app.get('/api/flights/search/:origin/:destination', function(req, res) {
-      var origin = req.params.origin;
+      var origin      = req.params.origin;
+      var destination = req.params.destination;
 
       mongo.db().collection('flights')
-      .find({'origin': origin}).toArray(function(err,data){
-        console.log('data', data);
+        .find({'origin': origin, 'destination': destination})
+        .toArray(function(err, data) {
+          console.log('[inside docs] => ', data);
+          res.json( data );
       });
 
-      var flights =  require('../flights.json');
-      res.json( flights );
     });
 
     // AIRPORT CODES
@@ -53,14 +58,13 @@ module.exports = function(app,mongo) {
       var codes =  require('../originCodes.json');
       res.json( codes );
     });
-
     app.get('/api/cities/destination', function(req, res) {
       var codes =  require('../destCodes.json');
       res.json( codes );
     });
-    // AIRPORT CODES
 
-    app.get('*', function (req, res) {
+    // DEFAULT
+    app.get('/', function (req, res) {
       // load the view file (angular will handle the page changes on the front-end)
       res.sendFile(__dirname + '/public/index.html');
     });

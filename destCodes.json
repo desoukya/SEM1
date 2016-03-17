@@ -1,8 +1,28 @@
 [
     {
+      "airport" : "Dulles International Airport",
+      "city": "Dulles",
+      "code": "IAD"
+    },
+    {
+      "airport" : "Chicago O'Haire International Airport",
+      "city": "Chicago",
+      "code": "ORD"
+    },
+    {
+      "airport" : "Dubai International Airport",
+      "city": "Dubai",
+      "code": "DXB"
+    },
+    {
       "airport" : "Atlanta Hartfield Airport",
       "city": "Atlanta",
       "code": "ATL"
+    },
+    {
+      "airport" : "Charles de Gaulle Airport",
+      "city": "Paris",
+      "code": "CDG"
     },
     {
       "airport" : "John F. Kennedy International Airport",
@@ -10,8 +30,8 @@
       "code": "JFK"
     },
     {
-      "airport" : "Charles De Gaulle Airport",
-      "city": "Paris",
-      "code": "CDG"
+      "airport" : "Cairo International Airport",
+      "city": "Cairo",
+      "code": "CAI"
     }
 ]

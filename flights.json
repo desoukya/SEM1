@@ -22,5 +22,13 @@
       "origin": "CDG",
       "destination": "ATL",
       "cost": "$2803"
+  },
+  {
+      "title": "SE9209",
+      "date": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
+      "duration": "30 minutes",
+      "origin": "ATL",
+      "destination": "CDG",
+      "cost": "$2803"
   }
 ]

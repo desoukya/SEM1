@@ -13,7 +13,10 @@ angular.module('SE_AIRLINES')
          setSelectedDestinationCity: function(value) {
            this.destiantionCity = value;
          },
-         getFlightData : function(origin, dest) {
+         getInboundFlightData : function(origin, dest) {
+           return $http.get('/api/flights/search/' + origin + '/' + dest);
+         },
+         getOutboundFlightData : function(origin, dest) {
            return $http.get('/api/flights/search/' + origin + '/' + dest);
          },
          getOriginCities : function() {

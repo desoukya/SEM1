@@ -13,5 +13,25 @@
       "airport" : "Dubai International Airport",
       "city": "Dubai",
       "code": "DXB"
+    },
+    {
+      "airport" : "Atlanta Hartfield Airport",
+      "city": "Atlanta",
+      "code": "ATL"
+    },
+    {
+      "airport" : "Charles de Gaulle Airport",
+      "city": "Paris",
+      "code": "CDG"
+    },
+    {
+      "airport" : "John F. Kennedy International Airport",
+      "city": "New York",
+      "code": "JFK"
+    },
+    {
+      "airport" : "Cairo International Airport",
+      "city": "Cairo",
+      "code": "CAI"
     }
 ]
