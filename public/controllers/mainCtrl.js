@@ -17,18 +17,18 @@ angular.module('SE_AIRLINES')
        });
     };
 
-    $scope.SetOriginAirport = function(newCity) {
-      $scope.selectedOriginAirport = newCity;
-      FlightsSrv.setSelectedOriginAirport(newCity);
+    $scope.SetOriginAirport = function(newAirport) {
+      $scope.selectedOriginAirport = newAirport;
+      FlightsSrv.setSelectedOriginAirport(newAirport);
     };
 
-    $scope.SetDestinationAirport = function(newCity) {
-      $scope.selectedDestinationAirport = newCity;
-      FlightsSrv.setSelectedDestinationAirport(newCity);
+    $scope.SetDestinationAirport = function(newAirport) {
+      $scope.selectedDestinationAirport = newAirport;
+      FlightsSrv.setSelectedDestinationAirport(newAirport);
     };
 
     $scope.SearchFlights = function() {
-      $location.url('/flights');
+      $location.url('/outFlights');
     };
 
     originAirports();

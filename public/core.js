@@ -10,9 +10,15 @@ var App = angular.module('SE_AIRLINES', ['ngRoute']);
               controller  : 'mainCtrl'
           })
 
-          // route for the contact page
-          .when('/flights', {
-              templateUrl : '/partials/flights.html',
+          // route for outbound flights
+          .when('/outFlights', {
+              templateUrl : '/partials/outFlights.html',
+              controller  : 'flightsCtrl'
+          })
+
+          // route for inbound flights
+          .when('/inFlights', {
+              templateUrl : '/partials/inFlights.html',
               controller  : 'flightsCtrl'
           });
   });
