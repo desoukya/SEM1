@@ -2,36 +2,36 @@ angular.module('SE_AIRLINES')
 
 .controller('mainCtrl', function($scope, FlightsSrv, $location) {
 
-    $scope.selectedOriginCity       = 'From';
-    $scope.selectedDestinationCity  = 'To';
+    $scope.selectedOriginAirport       = 'From';
+    $scope.selectedDestinationAirport  = 'To';
 
-    function originCities() {
-      FlightsSrv.getOriginCities().success(function(cities){
-           $scope.originCities = cities;
+    function originAirports() {
+      FlightsSrv.getOriginAirports().success(function(airports) {
+           $scope.originAirports = airports;
        });
     };
 
-    function destinationCities() {
-      FlightsSrv.getDestinationCities().success(function(cities){
-           $scope.destinationCities = cities;
+    function destinationAirports() {
+      FlightsSrv.getDestinationAirports().success(function(airports) {
+           $scope.destinationAirports = airports;
        });
     };
 
-    $scope.SetOriginCity = function( newCity ) {
-      $scope.selectedOriginCity = newCity;
-      FlightsSrv.setSelectedOriginCity(newCity);
+    $scope.SetOriginAirport = function(newCity) {
+      $scope.selectedOriginAirport = newCity;
+      FlightsSrv.setSelectedOriginAirport(newCity);
     };
 
-    $scope.SetDestinationCity = function( newCity ) {
-      $scope.selectedDestinationCity = newCity;
-      FlightsSrv.setSelectedDestinationCity(newCity);
+    $scope.SetDestinationAirport = function(newCity) {
+      $scope.selectedDestinationAirport = newCity;
+      FlightsSrv.setSelectedDestinationAirport(newCity);
     };
 
     $scope.SearchFlights = function() {
       $location.url('/flights');
     };
 
-    originCities();
-    destinationCities();
+    originAirports();
+    destinationAirports();
 
 });

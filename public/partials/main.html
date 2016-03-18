@@ -14,23 +14,33 @@
             <div class="jumbotron">
                 <h3>Book Travel</h3>
                 <div class="dropdown">
-                  <button type="button" class='btn btn-default dropdown-toggle' id='originDDL' data-toggle='dropdown' ng-click='toggled' ng-bind='selectedOriginCity' aria-haspopup='true' aria-expanded='true'>
+                  <button type="button"
+                          class='btn btn-default dropdown-toggle'
+                          id='originDDL'
+                          data-toggle='dropdown'
+                          ng-click='toggled'
+                          ng-bind='selectedOriginAirport' aria-haspopup='true' aria-expanded='true'>
                     <span class='caret'></span>
                   </button>
                   <ul class='dropdown-menu' aria-labelledby='originDDL'>
-                    <li ng-repeat='origin in originCities'>
-                      <a href="/#/" ng-click='SetOriginCity(origin.code)'>{{origin.airport}}</a>
+                    <li ng-repeat='origin in originAirports'>
+                      <a href="/#/" ng-click='SetOriginAirport(origin.code)'>{{origin.airport}}</a>
                     </li>
                   </ul>
                 </div>
 
                 <div class="dropdown">
-                  <button type="button" class='btn btn-default dropdown-toggle' id='destinationDDL' data-toggle='dropdown' ng-click='toggled' ng-bind='selectedDestinationCity' aria-haspopup='true' aria-expanded='true'>
+                  <button type="button"
+                          class='btn btn-default dropdown-toggle'
+                          id='destinationDDL'
+                          data-toggle='dropdown'
+                          ng-click='toggled'
+                          ng-bind='selectedDestinationAirport' aria-haspopup='true' aria-expanded='true'>
                     <span class='caret'></span>
                   </button>
                   <ul class='dropdown-menu' aria-labelledby='destinationDDL'>
-                    <li ng-repeat='destination in destinationCities'>
-                      <a href="/#/" ng-click='SetDestinationCity(destination.code)'>{{destination.airport}}</a>
+                    <li ng-repeat='destination in destinationAirports'>
+                      <a href="/#/" ng-click='SetDestinationAirport(destination.code)'>{{destination.airport}}</a>
                     </li>
                   </ul>
                 </div>

@@ -1,17 +1,17 @@
 angular.module('SE_AIRLINES')
 .factory('FlightsSrv', function ($http) {
      return {
-         getSelectedOriginCity: function () {
-           return this.originCity;
+         getSelectedOriginAirport: function () {
+           return this.originAirport;
          },
-         setSelectedOriginCity: function(value) {
-           this.originCity = value;
+         setSelectedOriginAirport: function(value) {
+           this.originAirport = value;
          },
-         getSelectedDestinationCity: function () {
-           return this.destiantionCity;
+         getSelectedDestinationAirport: function () {
+           return this.destinationAirport;
          },
-         setSelectedDestinationCity: function(value) {
-           this.destiantionCity = value;
+         setSelectedDestinationAirport: function(value) {
+           this.destinationAirport = value;
          },
          getInboundFlightData : function(origin, dest) {
            return $http.get('/api/flights/search/' + origin + '/' + dest);
@@ -19,10 +19,10 @@ angular.module('SE_AIRLINES')
          getOutboundFlightData : function(origin, dest) {
            return $http.get('/api/flights/search/' + origin + '/' + dest);
          },
-         getOriginCities : function() {
+         getOriginAirports : function() {
            return $http.get('/api/cities/origin');
          },
-         getDestinationCities : function() {
+         getDestinationAirports : function() {
            return $http.get('/api/cities/destination');
          }
      };

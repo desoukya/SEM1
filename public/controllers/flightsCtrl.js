@@ -7,9 +7,9 @@ angular.module('SE_AIRLINES')
   /**
    * Outbound Flights
    */
-  FlightsSrv.getOutboundFlightData(FlightsSrv.getSelectedOriginCity(),
-                           FlightsSrv.getSelectedDestinationCity()
-                           ).success(function(data) {
+  FlightsSrv.getOutboundFlightData(FlightsSrv.getSelectedOriginAirport(),
+                                   FlightsSrv.getSelectedDestinationAirport()
+                                  ).success(function(data) {
           console.log('angular data outbound => ', data);
           $scope.outBoundflights = data;
   });
@@ -17,9 +17,9 @@ angular.module('SE_AIRLINES')
   /**
    * Inbound Flights
    */
-  FlightsSrv.getInboundFlightData(FlightsSrv.getSelectedDestinationCity(),
-                           FlightsSrv.getSelectedOriginCity()
-                           ).success(function(data) {
+  FlightsSrv.getInboundFlightData(FlightsSrv.getSelectedDestinationAirport(),
+                                  FlightsSrv.getSelectedOriginAirport()
+                                  ).success(function(data) {
           console.log('angular data inbound => ', data);
           $scope.inBoundflights = data;
   });

@@ -3,7 +3,7 @@
  */
 module.exports = function(app,mongo) {
 
-    // SEED DB
+    // DELETE DB
     app.get('/api/db/delete', function(req, res) {
       console.log(`[delete endpoint] <<< ${mongo} >>>`);
       mongo.db().collection('aircrafts').drop();
@@ -11,7 +11,7 @@ module.exports = function(app,mongo) {
       mongo.db().collection('flights').drop();
     });
 
-    // DELETE DB
+    // SEED DB
     app.get('/api/db/seed', function(req, res) {
       console.log(`[seed endpoint] <<< ${mongo} >>>`);
       var aircrafts     =  require('../aircrafts.json');
@@ -49,11 +49,11 @@ module.exports = function(app,mongo) {
 
     // AIRPORT CODES
     app.get('/api/cities/origin', function(req, res) {
-      var codes =  require('../originCodes.json');
+      var codes =  require('../airports.json');
       res.json( codes );
     });
     app.get('/api/cities/destination', function(req, res) {
-      var codes =  require('../destCodes.json');
+      var codes =  require('../airports.json');
       res.json( codes );
     });
 
