@@ -43,7 +43,6 @@ module.exports = function(app,mongo) {
       mongo.db().collection('flights')
         .find({'origin': origin, 'destination': destination})
         .toArray(function(err, data) {
-          console.log('[inside docs] => ', data);
           res.json( data );
       });
 

@@ -11,12 +11,6 @@ angular.module('SE_AIRLINES')
        });
     };
 
-    // function destinationAirports() {
-    //   FlightsSrv.getDestinationAirports().success(function(airports) {
-    //        $scope.destinationAirports = airports;
-    //    });
-    // };
-
     $scope.SetOriginAirport = function(originAirport) {
       $scope.selectedOriginAirport = originAirport;
       FlightsSrv.setSelectedOriginAirport(originAirport);
@@ -24,10 +18,8 @@ angular.module('SE_AIRLINES')
       /* get destination airports based on selected origin */
       FlightsSrv.getDestinationAirports(originAirport)
         .success(function(airports) {
-           console.log('getDestinationAirports => ', airports);
            $scope.destinationAirports = airports;
        });
-
     };
 
     $scope.SetDestinationAirport = function(destAirport) {
@@ -40,6 +32,5 @@ angular.module('SE_AIRLINES')
     };
 
     originAirports();
-    // destinationAirports();
 
 });

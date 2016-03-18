@@ -20,5 +20,11 @@ var App = angular.module('SE_AIRLINES', ['ngRoute']);
           .when('/inFlights', {
               templateUrl : '/partials/inFlights.html',
               controller  : 'flightsCtrl'
+          })
+
+          // route for outbound flights
+          .when('/confirmFlight', {
+              templateUrl : '/partials/confirmFlight.html',
+              controller  : 'flightsCtrl'
           });
   });
