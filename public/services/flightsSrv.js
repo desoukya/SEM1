@@ -14,11 +14,11 @@ angular.module('SE_AIRLINES')
            this.destinationAirport = value;
          },
          getOriginAirports : function() {
-           return $http.get('/api/cities/origin');
+           return $http.get('/api/airports/origin');
          },
-         getDestinationAirports : function() {
-           return $http.get('/api/cities/destination');
-         },         
+         getDestinationAirports : function(originAirport) {
+           return $http.get('/api/airports/destination/' + originAirport);
+         },
          getInboundFlightData : function(origin, dest) {
            return $http.get('/api/flights/search/' + origin + '/' + dest);
          },

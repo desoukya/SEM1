@@ -3,6 +3,8 @@
  */
 module.exports = function(app,mongo) {
 
+    var _  = require('underscore');
+
     // DELETE DB
     app.get('/api/db/delete', function(req, res) {
       console.log(`[delete endpoint] <<< ${mongo} >>>`);
@@ -48,18 +50,39 @@ module.exports = function(app,mongo) {
     });
 
     // AIRPORT CODES
-    app.get('/api/cities/origin', function(req, res) {
-      var codes =  require('../airports.json');
-      res.json( codes );
+    app.get('/api/airports/origin', function(req, res) {
+      mongo.db().collection('airports')
+        .find()
+        .toArray(function(err, airports) {
+          res.json( airports );
+      });
     });
-    app.get('/api/cities/destination', function(req, res) {
-      var codes =  require('../airports.json');
-      res.json( codes );
+    app.get('/api/airports/destination/:originAirport', function(req, res) {
+      var origin  = req.params.originAirport;
+      var flights = [];
+
+      mongo.db().collection('flights')
+        .find({'origin': origin})
+        .toArray(function(err, data) {
+
+          var size = data.length - 1;
+
+          _.each(data, function(flight, index) {
+
+            mongo.db().collection('airports')
+              .findOne({'code': flight.destination}, function(err,airport) {
+                _.isEmpty(_.where(flights, {destination: flight.destination}))
+                ? flights.push( airport )
+                : false;
+                if (size === index) res.json( flights );
+            });
+
+          });
+      });
     });
 
     // DEFAULT
     app.get('/', function (req, res) {
-      // load the view file (angular will handle the page changes on the front-end)
       res.sendFile(__dirname + '/public/index.html');
     });
 
