@@ -1,5 +1,7 @@
+/* require angular app instance */
 angular.module('SE_AIRLINES')
 
+/* flights controller */
 .controller('flightsCtrl', function($scope, FlightsSrv) {
 
   /**

@@ -1,6 +1,6 @@
 [
   {
-      "title": "SE603",
+      "title": "SE2205",
       "date": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
       "duration": "1 hour",
       "origin": "IAD",
@@ -8,11 +8,19 @@
       "cost": "$1403"
   },
   {
-      "title": "SE05",
+      "title": "SE2304",
       "date": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
-      "duration": "8 hours",
+      "duration": "2 hours",
       "origin": "JFK",
       "destination": "CAI",
+      "cost": "$2403"
+  },
+  {
+      "title": "SE2305",
+      "date": "Sun Feb 29 2016 17:54:57 GMT+0300 (EST)",
+      "duration": "2 hours",
+      "origin": "JFK",
+      "destination": "IAD",
       "cost": "$2403"
   },
   {
