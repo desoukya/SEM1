@@ -1,27 +1,39 @@
-/* require angular app instance */
+/* Require Angular App Instance */
 angular.module('SE_AIRLINES')
 
-/* flights controller */
+/**
+ * Flights Controller
+ */
 .controller('flightsCtrl', function($scope, FlightsSrv) {
 
-  /**
-   * Outbound Flights
-   */
+   /* Initialize Scope Variables */
+   $scope.selectedOutboundFlight  = FlightsSrv.getSelectedOutboundFlight();
+   $scope.selectedInboundFlight   = FlightsSrv.getSelectedInboundFlight();
+
+
+   /* Outbound Flights */
   FlightsSrv.getOutboundFlightData(FlightsSrv.getSelectedOriginAirport(),
                                    FlightsSrv.getSelectedDestinationAirport()
                                   ).success(function(data) {
-          console.log('angular data outbound => ', data);
           $scope.outBoundflights = data;
   });
 
-  /**
-   * Inbound Flights
-   */
+   /* Inbound Flights */
   FlightsSrv.getInboundFlightData(FlightsSrv.getSelectedDestinationAirport(),
                                   FlightsSrv.getSelectedOriginAirport()
                                   ).success(function(data) {
-          console.log('angular data inbound => ', data);
           $scope.inBoundflights = data;
   });
+
+  /* Set Selected Outbound Flight */
+  $scope.SetOutboundFlight = function(flight) {
+    FlightsSrv.setSelectedOutboundFlight(flight);
+  };
+
+  /* Set Selected Inbound Flight */
+  $scope.SetInboundFlight = function(flight) {
+    FlightsSrv.setSelectedInboundFlight(flight);
+  };
+
 
 });

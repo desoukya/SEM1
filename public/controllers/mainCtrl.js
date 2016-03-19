@@ -1,16 +1,23 @@
+/* Require Angular App Instance */
 angular.module('SE_AIRLINES')
 
+/**
+ * Main Controller
+ */
 .controller('mainCtrl', function($scope, FlightsSrv, $location) {
 
+    /* Initialize Scope Variables */
     $scope.selectedOriginAirport       = 'From';
     $scope.selectedDestinationAirport  = 'To';
 
+    /* Retrieve List of Oirign Airports */
     function originAirports() {
       FlightsSrv.getOriginAirports().success(function(airports) {
            $scope.originAirports = airports;
        });
     };
 
+    /* Record User's Selected Origin Airport  */
     $scope.SetOriginAirport = function(originAirport) {
       $scope.selectedOriginAirport = originAirport;
       FlightsSrv.setSelectedOriginAirport(originAirport);
@@ -22,15 +29,18 @@ angular.module('SE_AIRLINES')
        });
     };
 
+    /* Record User's Selected Destination Airport  */
     $scope.SetDestinationAirport = function(destAirport) {
       $scope.selectedDestinationAirport = destAirport;
       FlightsSrv.setSelectedDestinationAirport(destAirport);
     };
 
+    /* Find All Available Flights  */
     $scope.SearchFlights = function() {
       $location.url('/outFlights');
     };
 
+    /* Get Airports on page render  */
     originAirports();
 
 });

@@ -1,4 +1,9 @@
+/* Require Angular App Instance */
 angular.module('SE_AIRLINES')
+
+/**
+ * Flights Service
+ */
 .factory('FlightsSrv', function ($http) {
      return {
          getSelectedOriginAirport: function () {
@@ -12,6 +17,18 @@ angular.module('SE_AIRLINES')
          },
          setSelectedDestinationAirport: function(value) {
            this.destinationAirport = value;
+         },
+         getSelectedInboundFlight: function () {
+           return this.inboundFlight;
+         },
+         setSelectedInboundFlight: function(value) {
+           this.inboundFlight = value;
+         },
+         getSelectedOutboundFlight: function () {
+           return this.outboundFlight;
+         },
+         setSelectedOutboundFlight: function(value) {
+           this.outboundFlight = value;
          },
          getOriginAirports : function() {
            return $http.get('/api/airports/origin');
