@@ -29,5 +29,11 @@ App.config(function($routeProvider) {
         .when('/confirmFlight', {
             templateUrl : '/partials/confirmFlight.html',
             controller  : 'flightsCtrl'
+        })
+
+        // route for outbound flights
+        .when('/payment', {
+            templateUrl : '/partials/payment.html',
+            controller  : 'flightsCtrl'
         });
 });
