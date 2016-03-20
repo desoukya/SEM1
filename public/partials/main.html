@@ -13,68 +13,25 @@
           <div class="col-sm-4">
             <div class="jumbotron">
                 <h3>Book Travel</h3>
-                <div class="dropdown">
 
+                <input name="originAirports"
+                id="originAirports"
+                type="text"
+                placeholder="Flying From"
+                ng-model="selectedOrigin"
+                uib-typeahead="airport.airport for airport in originAirports | filter:$viewValue"
+                class="form-control",
+                typeahead-on-select="SetOriginAirport($item.code)">
 
-                  <input name="states"
-                  id="states"
-                  type="text"
-                  placeholder="Flying From"
-                  ng-model="selected"
-                  uib-typeahead="airport.airport for airport in originAirports"
-                  class="form-control">
+                <input name="destinationAirports"
+                id="destinationAirports"
+                type="text"
+                placeholder="Flying To"
+                ng-model="selectedDestination"
+                uib-typeahead="airport.airport for airport in destinationAirports | filter:$viewValue"
+                class="form-control",
+                typeahead-on-select="SetDestinationAirport($item.code)">
 
-			            <!-- <input name="states"
-                  id="states"
-                  type="text"
-                  placeholder="Flying From"
-                  ng-model="selected"
-                  uib-typeahead="state for state in states | filter:$viewValue | limitTo:8"
-                  class="form-control"> -->
-
-                  <!-- <div class="form-group">
-              		  <label for="states">Search for US States</label>
-              			<input name="states"
-                           id="states"
-                           type="text"
-                           placeholder="enter a state"
-                           ng-model="selected"
-                           typeahead="state for state in states | filter:$viewValue | limitTo:8"
-                           class="form-control">
-              		</div>
-                  <button class="btn btn-success" type="submit">Submit</button> -->
-
-                <!-- <button type="button"
-                        class='btn btn-default dropdown-toggle'
-                        id='originDDL'
-                        data-toggle='dropdown'
-                        ng-click='toggled'
-                        ng-bind='selectedOriginAirport' aria-haspopup='true' aria-expanded='true'>
-                  <span class='caret'></span>
-                </button>
-                  <ul class='dropdown-menu' aria-labelledby='originDDL'>
-                    <li ng-repeat='origin in originAirports'>
-                      <a href="/#/" ng-click='SetOriginAirport(origin.code)'>{{origin.airport}}</a>
-                    </li>
-                  </ul> -->
-
-                </div>
-
-                <div class="dropdown">
-                  <button type="button"
-                          class='btn btn-default dropdown-toggle'
-                          id='destinationDDL'
-                          data-toggle='dropdown'
-                          ng-click='toggled'
-                          ng-bind='selectedDestinationAirport' aria-haspopup='true' aria-expanded='true'>
-                    <span class='caret'></span>
-                  </button>
-                  <ul class='dropdown-menu' aria-labelledby='destinationDDL'>
-                    <li ng-repeat='destination in destinationAirports'>
-                      <a href="/#/" ng-click='SetDestinationAirport(destination.code)'>{{destination.airport}}</a>
-                    </li>
-                  </ul>
-                </div>
               <button type="button" class="btn btn-primary" id='btnSearch' ng-click='SearchFlights()'>Search Flights</button>
 
             </div>

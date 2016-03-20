@@ -60,6 +60,7 @@ module.exports = function(app,mongo) {
       var origin  = req.params.originAirport;
       var flights = [];
 
+      /* Retrieve List of Possible Destiantion Airports Based on Origin */
       mongo.db().collection('flights')
         .find({'origin': origin})
         .toArray(function(err, data) {

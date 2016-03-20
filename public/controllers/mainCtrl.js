@@ -4,10 +4,7 @@
 App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
 
     /* Initialize Scope Variables */
-    $scope.selectedOriginAirport       = 'From';
-    $scope.selectedDestinationAirport  = 'To';
-
-    $scope.selected = undefined;
+    $scope.selectedOrigin = undefined;
 
     /* Retrieve List of Oirign Airports */
     function originAirports() {
@@ -16,13 +13,8 @@ App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
        });
     };
 
-    $scope.$watch('selected', function() {
-      console.log("thanks for picking an airport!");
-    });
-
     /* Record User's Selected Origin Airport  */
     $scope.SetOriginAirport = function(originAirport) {
-      $scope.selectedOriginAirport = originAirport;
       FlightsSrv.setSelectedOriginAirport(originAirport);
 
       /* get destination airports based on selected origin */
@@ -34,7 +26,6 @@ App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
 
     /* Record User's Selected Destination Airport  */
     $scope.SetDestinationAirport = function(destAirport) {
-      $scope.selectedDestinationAirport = destAirport;
       FlightsSrv.setSelectedDestinationAirport(destAirport);
     };
 
