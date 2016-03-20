@@ -1,14 +1,24 @@
-/* Require Angular App Instance */
-angular.module('SE_AIRLINES')
-
 /**
  * Main Controller
  */
-.controller('mainCtrl', function($scope, FlightsSrv, $location) {
+App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
 
     /* Initialize Scope Variables */
     $scope.selectedOriginAirport       = 'From';
     $scope.selectedDestinationAirport  = 'To';
+
+    $scope.states = ["Alabama", "Alaska", "Arizona", "Arkansas", "California",
+    "Colorado", "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii",
+    "Idaho", "Illinois", "Indiana", "Iowa", "Kansas", "Kentucky", "Louisiana",
+    "Maine", "Maryland", "Massachusetts", "Michigan", "Minnesota",
+    "Mississippi", "Missouri", "Montana", "Nebraska", "Nevada",
+    "New Hampshire", "New Jersey", "New Mexico", "New York", "North Dakota",
+    "North Carolina", "Ohio", "Oklahoma", "Oregon", "Pennsylvania",
+    "Rhode Island", "South Carolina", "South Dakota", "Tennessee", "Texas",
+    "Utah", "Vermont", "Virginia", "Washington", "West Virginia", "Wisconsin",
+    "Wyoming"];
+
+    $scope.selected = undefined;
 
     /* Retrieve List of Oirign Airports */
     function originAirports() {

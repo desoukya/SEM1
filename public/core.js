@@ -1,5 +1,5 @@
 /* Create Angular App Instance */
-var App = angular.module('SE_AIRLINES', ['ngRoute']);
+App = angular.module('SE_AIRLINES', ['ui.bootstrap', 'ngRoute']);
 
 /**
  * Angular Routes
@@ -25,13 +25,13 @@ App.config(function($routeProvider) {
             controller  : 'flightsCtrl'
         })
 
-        // route for outbound flights
+        // route for selected flights confirmation
         .when('/confirmFlight', {
             templateUrl : '/partials/confirmFlight.html',
             controller  : 'flightsCtrl'
         })
 
-        // route for outbound flights
+        // route for stripe payment
         .when('/payment', {
             templateUrl : '/partials/payment.html',
             controller  : 'flightsCtrl'

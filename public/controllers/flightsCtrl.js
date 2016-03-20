@@ -1,10 +1,7 @@
-/* Require Angular App Instance */
-angular.module('SE_AIRLINES')
-
 /**
  * Flights Controller
  */
-.controller('flightsCtrl', function($scope, FlightsSrv) {
+App.controller('flightsCtrl', function($scope, FlightsSrv) {
 
    /* Initialize Scope Variables */
    $scope.selectedOutboundFlight  = FlightsSrv.getSelectedOutboundFlight();
