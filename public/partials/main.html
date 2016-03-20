@@ -15,13 +15,22 @@
                 <h3>Book Travel</h3>
                 <div class="dropdown">
 
-			            <input name="states"
+
+                  <input name="states"
+                  id="states"
+                  type="text"
+                  placeholder="Flying From"
+                  ng-model="selected"
+                  uib-typeahead="airport.airport for airport in originAirports"
+                  class="form-control">
+
+			            <!-- <input name="states"
                   id="states"
                   type="text"
                   placeholder="Flying From"
                   ng-model="selected"
                   uib-typeahead="state for state in states | filter:$viewValue | limitTo:8"
-                  class="form-control">
+                  class="form-control"> -->
 
                   <!-- <div class="form-group">
               		  <label for="states">Search for US States</label>
