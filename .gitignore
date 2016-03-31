@@ -1,2 +1,5 @@
+**/.DS_Store
+
 # Dependency Directories
 node_modules
+**/bower_components

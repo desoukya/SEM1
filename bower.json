@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
-    "semantic": "semantic-ui#^2.1.8"
+    "semantic": "semantic-ui#^2.1.8",
+    "AngularJS": "angular-latest#^1.5.3",
+    "angular": "^1.5.3"
   }
 }
