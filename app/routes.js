@@ -1,6 +1,7 @@
 /**
  * App routes:
  */
+ var faker = require('faker');
 module.exports = function(app,mongo) {
 
     var _  = require('underscore');
@@ -32,7 +33,7 @@ module.exports = function(app,mongo) {
         if(err) throw error('airports insertion error');
         else console.log('codes insertion successfull');
       });
-
+      res.json({"msg": "db seeded successfully!"});
     });
 
     // SEARCH ENDPOINT
@@ -40,12 +41,20 @@ module.exports = function(app,mongo) {
       var origin      = req.params.origin;
       var destination = req.params.destination;
 
+      var criteria = {};
+      if(origin && origin !== 'undefined') {
+          criteria.origin = origin;
+      }
+      if(destination && destination !== 'undefined') {
+          criteria.destination = destination;
+      }
+      console.log(criteria);
       mongo.db().collection('flights')
-        .find({'origin': origin, 'destination': destination})
+        .find(criteria)
         .toArray(function(err, data) {
+            console.log(data);
           res.json( data );
       });
-
     });
 
     // AIRPORT CODES
@@ -56,6 +65,7 @@ module.exports = function(app,mongo) {
           res.json( airports );
       });
     });
+
     app.get('/api/airports/destination/:originAirport', function(req, res) {
       var origin  = req.params.originAirport;
       var flights = [];
@@ -86,4 +96,18 @@ module.exports = function(app,mongo) {
       res.sendFile(__dirname + '/public/index.html');
     });
 
+    app.get('/getPromoOffer/:number', function(req, res) {
+        var index = req.params.number;
+        var image;
+        if(index == 1) {
+            image = faker.image.city();
+        }else if(index == 2) {
+            image = faker.image.nature();
+        }else {
+            image = faker.image.food();
+        }
+        res.json({
+            "url": image
+        });
+    });
 };
