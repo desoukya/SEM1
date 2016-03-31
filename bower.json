@@ -1,0 +1,21 @@
+{
+  "name": "SE-Airlines",
+  "description": "SE 2016 Airlines Project",
+  "main": "",
+  "authors": [
+    "Amr Desouky <desoukya@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/desoukya/SEM1",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "**/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "semantic": "semantic-ui#^2.1.8"
+  }
+}
