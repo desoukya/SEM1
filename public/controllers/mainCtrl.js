@@ -1,13 +1,15 @@
 /**
  * Main Controller
  */
-App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
+
+App.controller('mainCtrl', function($scope, FlightsSrv, $location, UtilSrv) {
 
     /* Initialize Scope Variables */
     $scope.selectedOrigin = undefined;
+    $scope.promosReady = false;
 
     $scope.open1 = function() {
-      $scope.popup1.opened = true;
+        $scope.popup1.opened = true;
     };
 
     $scope.open2 = function() {
@@ -17,6 +19,18 @@ App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
     $scope.setDate = function(year, month, day) {
       $scope.dt = new Date(year, month, day);
     };
+
+    UtilSrv.getPromo(1).success(function(res) {
+        $scope.leftOffer = res.url;
+    });
+
+    UtilSrv.getPromo(2).success(function(res) {
+        $scope.midOffer = res.url;
+    });
+
+    UtilSrv.getPromo(3).success(function(res) {
+        $scope.rightOffer = res.url;
+    });
 
     $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
     $scope.format = $scope.formats[0];
@@ -28,7 +42,7 @@ App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
 
     $scope.popup2 = {
       opened: false
-    };    
+    };
 
     /* Retrieve List of Oirign Airports */
     function originAirports() {
@@ -61,4 +75,8 @@ App.controller('mainCtrl', function($scope, FlightsSrv, $location) {
     /* Get Airports on page render  */
     originAirports();
 
+
+    $('.special.cards .image').dimmer({
+      on: 'hover'
+    });
 });

@@ -1,11 +1,9 @@
 body {
-  padding-top: 50px;
+    padding-top: 50px;
 }
-
 .center {
-  text-align: center;
+    text-align: center;
 }
-
 .panel-heading h3 {
     white-space: nowrap;
     overflow: hidden;
@@ -14,43 +12,82 @@ body {
     width: 75%;
     padding-top: 8px;
 }
-
-.banner{
- background-image: url("/images/ad.jpg");
- height: 750px;
+.banner:before {
+    content: "";
+    display: block;
+    background-image: url("/images/bg.jpg");
+    position: absolute;
+    background-size: cover;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    /*margin-top: -15%;*/
+    -webkit-filter: blur(3px);
+    -moz-filter: blur(3px);
+    -o-filter: blur(3px);
+    -ms-filter: blur(3px);
+    filter: blur(3px);
 }
 
+.space {
+    margin-top: 5% !important;
+}
+
+.welcome {
+    margin-top: 10% !important;
+}
+
+.cursor-pointer {
+    cursor: pointer !important;
+}
+.book-flight {
+    width: 70%;
+    margin: 10%;
+}
+
+.banner {
+    position: relative;;
+    z-index: 0;
+    height: 750px;
+    overflow: auto;
+}
 .container .jumbotron {
- padding-top: 1px !important;
- border-color: gray;
- border-width:  inherit;
- border-radius: 0;
- border-style: solid;
- background-image: none;
- background-color: white;
- height: 350px;
+    padding-top: 1px !important;
+    border-color: gray;
+    border-width: inherit;
+    border-radius: 0;
+    border-style: solid;
+    background-image: none;
+    background-color: white;
+    height: 350px;
+}
+.promo-offer {
+    box-shadow: 5px 5px 10px #888888;
+    height: 200px;
+    width: 350px;
+    border-radius: 3px;
 }
 .container .jumbotron h3 {
-  font-size: 15px;
-  padding-top: 0px;
-  text-align: center;
+    font-size: 15px;
+    padding-top: 0px;
+    text-align: center;
 }
 .container .jumbotron .dropdown {
- /*display: inline;*/
- /*padding-right: 100px;
+    /*display: inline;*/
+    /*padding-right: 100px;
  padding-left: 0px;*/
- width: 160px;
+    width: 160px;
 }
-
 .flightSearchResults {
-  background-image: none;
-  background-color: white;
-  height: 550px;
+    background-image: none;
+    background-color: white;
+    height: 550px;
 }
-
 .container .jumbotron .dropdown button {
- /*display: inline;*/
- /*padding-right: 100px;
+    /*display: inline;*/
+    /*padding-right: 100px;
  padding-left: 0px;*/
- width: 260px;
+    width: 260px;
 }

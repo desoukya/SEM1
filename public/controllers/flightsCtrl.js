@@ -12,6 +12,8 @@ App.controller('flightsCtrl', function($scope, FlightsSrv) {
   FlightsSrv.getOutboundFlightData(FlightsSrv.getSelectedOriginAirport(),
                                    FlightsSrv.getSelectedDestinationAirport()
                                   ).success(function(data) {
+            console.log("data");
+            console.log(data);
           $scope.outBoundflights = data;
   });
 
